@@ -1,12 +1,9 @@
 {
   "name": "api_qa_assessment",
   "version": "1.0.0",
-  "description": "",
+  "description": "YOUTAP QA tech assessment",
   "main": "codecept.conf.js",
-  "scripts": {
-    "test": ""
-  },
-  "author": "",
+  "author": "Joy Aguilar",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.26.0",
