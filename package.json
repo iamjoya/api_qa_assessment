@@ -1,0 +1,17 @@
+{
+  "name": "api_qa_assessment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "codecept.conf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.0",
+    "codeceptjs-chai": "^2.3.2",
+    "lodash": "^4.17.21",
+    "superagent": "^7.1.1"
+  }
+}
