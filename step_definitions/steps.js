@@ -55,22 +55,18 @@ Then(/^in the response body, the following data are present:$/, (expectedValue) 
   assert.exists(I.resBody, expectedRes, 'Object values not equal.');
 });
 
-Then(/^in the "(.*)" object, the following data are present:$/, (parentKey, table) => {
-  let expectedPairs = table.parse().hashes();
-  Object.keys(expectedPairs).forEach(function (key) {
-    if (key === "age") {
-      expectedPairs[key] = Number(expectedPairs[key]);
-    }
-  });
-  assert.deepEqual(I.resBody[parentKey], expectedPairs, 'Object values not equal.');
-});
-
 Then(/^the response body should be "(.*)"$/, (expectedValue) => {
   assert.isEmpty(I.resBody, expectedValue, 'Body contains a value');
 });
 
-Then(/^the users count should be "(.*)s"$/, (expectedValue) => {
-  let actualValue = expectedCount;
+Then(/^the user total count should be "(.*)"$/, (key, expectedValue) => {
+
+  if (key == "id") {
+    expectedValue = Number(expectedValue);
+    assert.isNumber(I.resBody[key]);
+  }
+  actualValue =  I.resBody.length;
+  assert.equal(actualValue, key, `Value for ${key} is incorrect.`);
 
 });
 
