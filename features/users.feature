@@ -1,7 +1,7 @@
-Feature: JSON PLACEHOLDER USERS
+Feature: JSON PLACEHOLDER - USERS
 
   @positive_scenario
-  Scenario Outline: Scenario Outline name: I should be able to send a certain post
+  Scenario Outline: I should be able to send a certain post
     Given I created a "GET" request for "Json Placeholder" request for endpoint "/users/2"
     And key-values "Content-Type": "application/json" are present in the request headers
     When I send the request
@@ -19,7 +19,7 @@ Feature: JSON PLACEHOLDER USERS
     And key-values "Content-Type": "application/json" are present in the request headers
     When I send the request
     Then the response status should be "200"
-  # And the users count should be "10"
+    And the user total count should be "10"
 
   @negative_scenario
   Scenario: Status code should be 404 when invalid json placeholder users enpoint is accessed
