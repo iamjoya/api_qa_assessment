@@ -12,21 +12,18 @@ Given(/^I created a "(.*)" request for "(.*)" request for endpoint "(.*)"$/, (me
     "host": url[camelCase(urlKey)],
     "endpoint": ep
   };
-  console.log(I.request);
 });
 
 Given(/^key-values "(.*)": "(.*)" are present in the request headers$/, (headerKey, headerValue) => {
   let headerObj = {};
   headerObj[headerKey] = headerValue;
   I.request.headers = headerObj;
-  console.log(I.request);
 });
 
 Given(/^key-values "(.*)": "(.*)" is presented in the query params$/, (queryKey, queryValue) => {
   let queryObj = {};
   queryObj[queryKey] = queryValue;
   I.request.query = queryObj;
-  console.log(I.request);
 });
 
 When(/^I send the request$/, async () => {
@@ -51,7 +48,6 @@ Then(/^the value of "(.*)" in response body should be "(.*)"$/, (key, expectedVa
 Then(/^in the response body, the following data are present:$/, (expectedValue) => {
   expectedRes = JSON.stringify(expectedValue);
 
-  console.log(I.resBody);
   assert.exists(I.resBody, expectedRes, 'Object values not equal.');
 });
 
